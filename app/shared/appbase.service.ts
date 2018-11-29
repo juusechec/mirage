@@ -48,7 +48,8 @@ export class AppbaseService {
 			headersObj.Authorization = this.requestParam.auth
 		}
 
-		let headers = new Headers(headersObj);
+		// let headers = new Headers(headersObj);
+		let headers = new Headers();
 		var request_url = this.requestParam.url.replace(this.config.username + ':' + this.config.password + '@', '');
 		var request_path = request_url + path + '/';
 		return this.http.get(request_path, { headers: headers }).toPromise();
@@ -83,7 +84,8 @@ export class AppbaseService {
 				headersObj.Authorization = self.requestParam.auth
 			}
 	
-			let headers = new Headers(headersObj);
+			// let headers = new Headers(headersObj);
+			let headers = new Headers();
 			var request_url = self.requestParam.url.replace(self.config.username + ':' + self.config.password + '@', '');
 			var request_path = request_url + path + '/';
 			console.log(request_path);
@@ -94,12 +96,13 @@ export class AppbaseService {
 		let headersObj: any = {
 			'Content-Type': 'application/json;charset=UTF-8'
 		};
-		
+		console.log('this.requestParam.auth', this.requestParam.auth);
 		if (this.requestParam.auth) {
 			headersObj.Authorization = this.requestParam.auth
 		}
 
-		let headers = new Headers(headersObj);
+		// let headers = new Headers(headersObj);
+		let headers = new Headers();
 		var request_url = this.requestParam.url.replace(this.config.username + ':' + this.config.password + '@', '');
 		var request_path = request_url + '/_settings?human';
 		console.log(request_path);
@@ -115,7 +118,8 @@ export class AppbaseService {
 			headersObj.Authorization = this.requestParam.auth
 		}
 
-		let headers = new Headers(headersObj);
+		// let headers = new Headers(headersObj);
+		let headers = new Headers();
 		return this.http.post(this.requestParam.url + path, requestData, { headers: headers }).toPromise()
 	}
 	posturl(url: string, data: any) {
@@ -128,7 +132,8 @@ export class AppbaseService {
 			headersObj.Authorization = this.requestParam.auth
 		}
 
-		let headers = new Headers(headersObj);
+		// let headers = new Headers(headersObj);
+		let headers = new Headers();
 		return this.http.post(url, requestData, { headers: headers }).toPromise()
 	}
 	put(path: string, data: any) {
@@ -140,7 +145,8 @@ export class AppbaseService {
 			headersObj.Authorization = this.requestParam.auth
 		}
 
-		let headers = new Headers(headersObj);
+		// let headers = new Headers(headersObj);
+		let headers = new Headers();
 		return this.http.put(this.requestParam.url + path, data, { headers: headers }).toPromise()
 	}
 	delete(path: string) {
@@ -152,7 +158,8 @@ export class AppbaseService {
 			headersObj.Authorization = this.requestParam.auth
 		}
 
-		let headers = new Headers(headersObj);
+		// let headers = new Headers(headersObj);
+		let headers = new Headers();
 		return this.http.delete(this.requestParam.url + path, { headers: headers }).toPromise()
 	}
 	public handleError(error: any) {
