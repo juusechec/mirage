@@ -93,7 +93,8 @@ UrlShare.prototype.convertToUrl = function(type) {
 }
 
 UrlShare.prototype.dejavuLink = function() {
-	var final_url = 'http://appbaseio.github.io/dejavu/live/#?input_state='+this.url;
+	// var final_url = 'http://appbaseio.github.io/dejavu/live/#?input_state='+this.url;
+	var final_url = 'http://localhost:1358/live/#?input_state='+this.url;
 	return final_url;
 }
 
